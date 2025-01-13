@@ -1,4 +1,4 @@
-package controller;
+package dao;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,13 +22,13 @@ import java.util.List;
 public class ProdutosDAO {
     
     private Connection conn;
-    private conectaDAO conexao;
+    private ConectaDAO conexao;
     private PreparedStatement prep;
     ResultSet resultset;
     ArrayList<ProdutosDTO> listagem = new ArrayList<>();
 
     public ProdutosDAO() {
-        this.conexao = new conectaDAO();
+        this.conexao = new ConectaDAO();
         this.conn = conexao.connectDB();
     }
     

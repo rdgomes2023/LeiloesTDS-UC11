@@ -1,4 +1,4 @@
-package controller;
+package dao;
 
 
 import java.sql.Connection;
@@ -17,13 +17,13 @@ import javax.swing.JOptionPane;
  *
  * @author Adm
  */
-public class conectaDAO {
+public class ConectaDAO {
     
     public Connection connectDB(){
         Connection conn = null;
         String URL = "jdbc:mysql://localhost/uc11";
         String usuario = "root";
-        String senha = "lorobeleza";
+        String senha = "";
         
         try {
         

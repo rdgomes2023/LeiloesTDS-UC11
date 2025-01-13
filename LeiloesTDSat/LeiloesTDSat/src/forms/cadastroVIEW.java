@@ -1,9 +1,9 @@
-package view;
+package forms;
 
 
 import model.ProdutosDTO;
-import controller.ProdutosDAO;
-import view.listagemVIEW;
+import dao.ProdutosDAO;
+import forms.listagemVIEW;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

@@ -1,8 +1,8 @@
-package view;
+package forms;
 
 
 import model.ProdutosDTO;
-import controller.ProdutosDAO;
+import dao.ProdutosDAO;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
