@@ -76,7 +76,7 @@ public class ProdutosDAO {
         try {
             prep = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
-            //Setando os parâmetros
+            //Passando os parâmetros da consulta
             prep.setString(1, "Vendido");
             prep.setInt(2, id_produto); //pegando o parâmetro passado pelo usuários.
             //criando variável de condição e Executando a query
@@ -90,6 +90,32 @@ public class ProdutosDAO {
             //tratando o erro, caso ele ocorra.
         } catch (Exception e) {
             System.out.println("Erro ao vender produto: " + e.getMessage());
+        }
+    }
+    
+    public ArrayList<ProdutosDTO> listarProdutosVendidos() {
+        String sql = "SELECT * FROM produtos WHERE status = 'Vendido'";
+
+        try {
+            prep = this.conn.prepareStatement(sql);
+            resultset = prep.executeQuery();
+
+            List<ProdutosDTO> listaProdutos = new ArrayList<>();
+
+            while (resultset.next()) { //.next retorna verdadeiro caso exista uma próxima posição dentro do array
+                ProdutosDTO p = new ProdutosDTO();
+                p.setId(resultset.getInt("id"));
+                p.setNome(resultset.getString("nome"));
+                p.setValor(resultset.getInt("valor"));
+                p.setStatus(resultset.getString("status"));
+
+                listaProdutos.add(p);
+            }
+            return (ArrayList<ProdutosDTO>) listaProdutos;
+
+            //Se o método entrar no "Catch" quer dizer que não encontrou nenhuma empresa, então damos um "return null"          
+        } catch (Exception e) {
+            return null;
         }
     }
 
