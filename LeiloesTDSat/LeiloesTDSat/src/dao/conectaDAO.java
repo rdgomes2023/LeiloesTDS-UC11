@@ -23,7 +23,7 @@ public class ConectaDAO {
         Connection conn = null;
         String URL = "jdbc:mysql://localhost/uc11";
         String usuario = "root";
-        String senha = "";
+        String senha = "lorobeleza";
         
         try {
         
